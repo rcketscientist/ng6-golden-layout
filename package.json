@@ -24,7 +24,7 @@
     "@angular/router": "^6.0.9",
     "core-js": "^2.5.7",
     "rxjs": "^6.2.2",
-    "zone.js": "^0.8.24"
+    "zone.js": "~0.8.26"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "0.6.8",
@@ -37,7 +37,7 @@
     "@types/jquery": "^3.3.22",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.2.1",
-    "golden-layout": "1.5.7",
+    "golden-layout": "^1.5.9",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "jquery": "^3.3.1",
@@ -54,6 +54,6 @@
     "tsickle": "^0.32.0",
     "tslib": "^1.9.3",
     "tslint": "~5.9.1",
-    "typescript": "~2.7.2"
+    "typescript": "^2.9.2"
   }
 }
