@@ -2,11 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'lib-demo-library',
-  template: `
-    <p>
-      demo-library works!
-    </p>
-  `,
+  templateUrl: 'demo-library.component.html',
   styles: []
 })
 export class DemoLibraryComponent implements OnInit {
