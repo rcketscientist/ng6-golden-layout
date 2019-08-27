@@ -88,5 +88,11 @@
   "engines": {
     "node": ">=10.9.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@angular/animations": "^8.0.0 || ^9.0.0-0",
+    "@angular/cdk": "~8.1.4",
+    "@angular/forms": "^8.0.0 || ^9.0.0-0",
+    "@angular/material": "^8.1.4",
+    "hammerjs": "^2.0.8"
+  }
 }

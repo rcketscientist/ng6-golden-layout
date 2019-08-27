@@ -6,7 +6,7 @@ import { GlOnClose, FailedComponent, PluginRegistryService, GoldenLayoutComponen
  * This is one component which will be instantiated by golden-layout
  */
 @Component({
-  template: `<h1>Test</h1><span>{{test.id}}</span>`,
+  template: `<div matTooltip="Tooltip">Hover for tooltip</div>`,
   selector: `app-test`,
 })
 export class TestComponent {
@@ -19,10 +19,7 @@ export class TestComponent {
 @Component({
   template: `
     <h1>Load a plugin here</h1>
-    <input type="text" #url  placeholder="Enter UMD bundle URL"><br>
-    <input type="text" #name placeholder="Enter library name"><br>
-    <input type="text" #comp placeholder="Enter component name to create"><br>
-    <button (click)="load(name.value, url.value, comp.value)">Load!</button>
+    <button (click)="load('demo-library', 'http://localhost:8000/demo-library.umd.js', 'demo-library-component')">Load!</button>
   `,
   styles: [`input { width: 300px }`],
   selector: `app-tested`,

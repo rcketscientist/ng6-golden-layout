@@ -14,6 +14,8 @@ import { TestComponent, TestedComponent, FailComponent, LandingPageComponent } f
 import { TestService, FooService } from './services';
 import { DockingComponent, COMPONENT_TYPES, RootComponent } from './docking.component';
 
+import {MatTooltipModule} from '@angular/material/tooltip';
+
 const ipcRenderer = window.require('electron').ipcRenderer as Electron.IpcRenderer;
 ipcRenderer.send('test', `Hello from app.module.ts in window ${window.document.location}`);
 
@@ -41,6 +43,7 @@ const COMPONENTS = [
   declarations: COMPONENTS,
   imports: [
     CommonModule,
+    MatTooltipModule,
     GoldenLayoutModule.forRoot(COMPONENT_TYPES, FailComponent, [{
       name: '@angular/core',
       loader: import('@angular/core'),
@@ -48,9 +51,16 @@ const COMPONENTS = [
       name: '@angular/common',
       loader: import('@angular/common'),
     }, {
+      name: '@angular/cdk',
+      loader: import('@angular/cdk'),
+    }, {
+      name: '@angular/material/tooltip',
+      loader: import('@angular/material/tooltip'),
+    }, {
       name: 'ngx-golden-layout',
       loader: import('ngx-golden-layout'),
     }]),
+    BrowserAnimationsModule,
   ],
   exports: COMPONENTS,
 })
