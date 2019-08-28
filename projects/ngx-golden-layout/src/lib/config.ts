@@ -27,7 +27,7 @@ export interface PluginDependencyType {
   /**
    * Function that loads the dependency
    */
-  loader: Promise<any>;
+  loader: any;
 }
 
 /**
