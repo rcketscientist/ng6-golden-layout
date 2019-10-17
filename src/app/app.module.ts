@@ -47,8 +47,8 @@ const CONFIG: GoldenLayout.Config = {
       },
       {
         type: 'component',
-        componentName: 'app-tested',
-        title: 'Test 3',
+        componentName: 'element',
+        title: 'element',
       }
     ]
   }],
@@ -56,6 +56,15 @@ const CONFIG: GoldenLayout.Config = {
     maximiseAllItems: true,
   } as any,
 };
+
+@Component({
+  selector: 'element',
+  template: `<custom-element></custom-element>`
+})
+export class ElementComponent {
+  constructor() {
+  }
+}
 
 @MultiWindowService<FooService>()
 @Injectable()
@@ -103,16 +112,16 @@ export class RootComponent {
       return;
     }
 
-    this.pluginRegistry.waitForPlugin('panel-library').then(() => {
-      this.layout.createNewComponent({
-        componentName: 'plugin-lib',
-        type: 'component',
-        title: 'Plugin - Dynamically loaded',
-      });
-    });
-    setTimeout(() => {
-      this.pluginRegistry.startLoadPlugin('panel-library', 'http://localhost:8000/panel-library.umd.min.js');
-    }, 3000);
+    // this.pluginRegistry.waitForPlugin('panel-library').then(() => {
+    //   this.layout.createNewComponent({
+    //     componentName: 'plugin-lib',
+    //     type: 'component',
+    //     title: 'Plugin - Dynamically loaded',
+    //   });
+    // });
+    // setTimeout(() => {
+    //   this.pluginRegistry.startLoadPlugin('panel-library', 'http://localhost:8000/panel-library.umd.min.js');
+    // }, 3000);
     setTimeout(() => {
       this.layout.createNewComponent({
           type: "component",
@@ -231,7 +240,11 @@ const COMPONENTS: ComponentType[] = [
   {
     name: 'app-tested',
     type: TestedComponent,
-  }
+  },
+  {
+    name: 'element',
+    type: ElementComponent,
+  },
 ];
 @NgModule({
   declarations: [
